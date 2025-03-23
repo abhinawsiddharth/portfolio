@@ -80,6 +80,12 @@ section h2 {
     font-size: 1.1rem;
 }
 
+#certifications ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
 #experience .job, #projects .project {
     margin-bottom: 2rem;
 }
@@ -139,4 +145,11 @@ section h2 {
 
 .dark-mode nav a:hover {
     color: #00aaff;
+}
+
+section {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 4rem; /* Adds extra space above each section */
 }

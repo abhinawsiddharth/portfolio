@@ -1,15 +1,20 @@
-// Smooth scrolling for nav links
+// Smooth scrolling for nav links with header offset
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
         const sectionId = this.getAttribute('href');
-        document.querySelector(sectionId).scrollIntoView({
+        const section = document.querySelector(sectionId);
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+
+        window.scrollTo({
+            top: sectionPosition,
             behavior: 'smooth'
         });
     });
 });
 
-// Dark mode toggle
+// Dark mode toggle (unchanged)
 const toggleButton = document.createElement('button');
 toggleButton.textContent = 'Toggle Dark Mode';
 toggleButton.style.position = 'fixed';
