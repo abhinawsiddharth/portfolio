@@ -109,6 +109,12 @@ section h2 {
     text-decoration: underline;
 }
 
+.job ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-size: 1.1rem;
+}
+
 /* Dark mode styles */
 .dark-mode {
     background-color: #1f1f1f;
