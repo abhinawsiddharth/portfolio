@@ -9,7 +9,9 @@
 <body>
     <header>
         <div class="header-content">
-            <img src="profile-placeholder.jpg" alt="Abhinaw Siddharth Bogadhi" class="profile-photo" id="profile-photo">
+            <div class="profile-photo-container">
+                <img src="profile.jpg" alt="Abhinaw Siddharth Bogadhi" class="profile-photo" id="profile-photo">
+            </div>
             <div class="header-text">
                 <h1>Abhinaw Siddharth Bogadhi</h1>
                 <p>Electrical Engineer & Designer</p>
@@ -28,6 +30,7 @@
         </nav>
     </header>
 
+    <!-- Rest of the sections remain unchanged -->
     <section id="about">
         <h2>About Me</h2>
         <p>Master’s graduate in Electrical and Computer Engineering from Concordia University with a strong foundation in power systems, electrical design, control systems, and automation. Proficient in Eagle, AutoCAD, Revit MEP, ETAP, MATLAB, and PLC. Hands-on experience in power distribution, renewable energy systems, and microcontrollers through academic projects and internships. Highly motivated, adaptable, and eager to drive innovation in electrical engineering.</p>
@@ -133,6 +136,12 @@
     </section>
 
     <button id="back-to-top" title="Back to Top">↑</button>
+
+    <!-- Modal for larger image -->
+    <div id="photo-modal" class="modal">
+        <span id="close-modal" class="close">&times;</span>
+        <img src="profile.jpg" alt="Abhinaw Siddharth Bogadhi" class="modal-content" id="modal-image">
+    </div>
 
     <script src="script.js"></script>
 </body>
