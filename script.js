@@ -17,18 +17,9 @@ document.querySelectorAll('nav a').forEach(anchor => {
     });
 });
 
-// Dark mode toggle
+// Dark mode toggle button
 const toggleButton = document.createElement('button');
-toggleButton.textContent = 'Toggle Dark Mode';
-toggleButton.style.position = 'fixed';
-toggleButton.style.top = '20px';
-toggleButton.style.right = '80px';
-toggleButton.style.padding = '10px';
-toggleButton.style.background = '#00aaff';
-toggleButton.style.color = 'white';
-toggleButton.style.border = 'none';
-toggleButton.style.borderRadius = '5px';
-toggleButton.style.cursor = 'pointer';
+toggleButton.className = 'toggle-dark-mode';
 document.body.appendChild(toggleButton);
 
 toggleButton.addEventListener('click', () => {
@@ -65,14 +56,13 @@ const modal = document.getElementById('photo-modal');
 const closeModal = document.getElementById('close-modal');
 
 profilePhoto.addEventListener('click', () => {
-    modal.style.display = 'flex'; // Show modal
+    modal.style.display = 'flex';
 });
 
 closeModal.addEventListener('click', () => {
-    modal.style.display = 'none'; // Hide modal
+    modal.style.display = 'none';
 });
 
-// Close modal when clicking outside the image
 modal.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.style.display = 'none';
