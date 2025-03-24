@@ -81,82 +81,10 @@ nav a:hover {
     color: white;
 }
 
-/* Mobile View */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-        position: static;
-    }
-
-    header {
-        flex-wrap: wrap;
-        padding: 0.5rem;
-    }
-
-    .header-content {
-        flex: 1;
-        padding: 0.5rem;
-    }
-
-    nav {
-        display: none;
-        flex-direction: column;
-        background: #1a2a44;
-        width: 100%;
-        padding: 1rem 0;
-    }
-
-    nav.active {
-        display: flex;
-    }
-
-    nav a {
-        margin: 0.5rem 0;
-        text-align: center;
-    }
-
-    .profile-photo {
-        width: 60px;
-        height: 60px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header p {
-        font-size: 0.9rem;
-    }
-}
-
-nav {
-    margin-top: 0.5rem; /* Reduced margin */
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem; /* Adjusted margin */
-    font-size: 1rem; /* Slightly smaller */
-    transition: color 0.3s, transform 0.3s;
-}
-
-nav a:hover {
-    color: #00aaff;
-    transform: scale(1.1);
-}
-
-.hamburger {
-    display: none;
-    font-size: 1.5rem; /* Slightly smaller */
-    cursor: pointer;
-    color: white;
-}
-
 /* Sections */
 section {
     padding: 3rem 2rem;
-    padding-top: 4rem; /* Adjusted for smaller header */
+    padding-top: 4rem;
     max-width: 900px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.9);
@@ -288,7 +216,7 @@ section h2 {
 @media (max-width: 768px) {
     .hamburger {
         display: block;
-        position: static; /* Adjusted for flex layout */
+        position: static;
     }
 
     header {
@@ -319,7 +247,7 @@ section h2 {
     }
 
     .profile-photo {
-        width: 60px; /* Smaller for mobile */
+        width: 60px;
         height: 60px;
     }
 
@@ -333,7 +261,7 @@ section h2 {
 
     section {
         padding: 2rem 1rem;
-        padding-top: 3rem; /* Adjusted for smaller header */
+        padding-top: 3rem;
     }
 
     #back-to-top {
