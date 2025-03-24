@@ -1,4 +1,4 @@
-/* Reset defaults for consistency */
+/* Reset defaults */
 * {
     margin: 0;
     padding: 0;
@@ -9,52 +9,93 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
-    background-color: #f4f4f4;
+    background: url('https://www.transparenttextures.com/patterns/circuit-board.png') repeat, #f4f4f4;
+    background-blend-mode: overlay;
 }
 
-/* Header styling */
+/* Header */
 header {
-    background: #1a2a44; /* Dark blue for a techy vibe */
+    background: #1a2a44;
     color: white;
-    text-align: center;
-    padding: 2rem 0;
+    padding: 1rem; /* Reduced padding to make header smaller */
     position: sticky;
     top: 0;
     z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns content and hamburger */
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Align photo and text horizontally */
+    flex-grow: 1; /* Allows content to take available space */
+}
+
+.profile-photo {
+    width:  150px; /* Reduced size for a smaller header */
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 1rem; /* Space between photo and text */
+    border: 3px solid #00aaff;
+    object-fit: cover;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem; /* Reduced font size */
+    margin-bottom: 0.2rem; /* Less spacing */
 }
 
 header p {
-    font-size: 1.2rem;
+    font-size: 1rem; /* Reduced font size */
     opacity: 0.9;
 }
 
 nav {
-    margin-top: 1rem;
+    margin-top: 0.5rem; /* Reduced margin */
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 1.5rem;
-    font-size: 1.1rem;
-    transition: color 0.3s;
+    margin: 0 1rem; /* Adjusted margin */
+    font-size: 1rem; /* Slightly smaller */
+    transition: color 0.3s, transform 0.3s;
 }
 
 nav a:hover {
-    color: #00aaff; /* Bright blue hover effect */
+    color: #00aaff;
+    transform: scale(1.1);
 }
 
-/* Section styling */
+.hamburger {
+    display: none;
+    font-size: 1.5rem; /* Slightly smaller */
+    cursor: pointer;
+    color: white;
+}
+
+/* Sections */
 section {
     padding: 3rem 2rem;
-    padding-top: 4rem; /* Adds extra space above each section */
+    padding-top: 4rem; /* Adjusted for smaller header */
     max-width: 900px;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
 
 section h2 {
@@ -65,45 +106,47 @@ section h2 {
     display: inline-block;
 }
 
-/* Specific section tweaks */
-#about p {
+#about p, #contact p {
     font-size: 1.1rem;
     text-align: center;
 }
 
-#skills ul {
-    list-style: none;
-    text-align: center;
-}
-
-#skills li {
-    margin: 0.8rem 0;
-    font-size: 1.1rem;
-}
-
-#certifications ul {
+#skills ul, #certifications ul {
     list-style: disc;
     margin-left: 20px;
     font-size: 1.1rem;
 }
 
-#experience .job, #projects .project {
+.job, .project {
     margin-bottom: 2rem;
+    transition: transform 0.3s;
 }
 
-#experience h3, #projects h3 {
+.job:hover, .project:hover {
+    transform: translateY(-5px);
+}
+
+.job h3, .project h3 {
     font-size: 1.3rem;
     color: #1a2a44;
     margin-bottom: 0.5rem;
 }
 
-#education p {
-    margin: 0.5rem 0;
+.date-location {
+    font-style: italic;
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.job ul {
+    list-style: disc;
+    margin-left: 20px;
     font-size: 1.1rem;
 }
 
-#contact p {
-    margin: 0.8rem 0;
+#education p {
+    margin: 0.5rem 0;
     font-size: 1.1rem;
 }
 
@@ -116,15 +159,9 @@ section h2 {
     text-decoration: underline;
 }
 
-.job ul {
-    list-style: disc;
-    margin-left: 20px;
-    font-size: 1.1rem;
-}
-
-/* Dark mode styles */
+/* Dark Mode */
 .dark-mode {
-    background-color: #1f1f1f;
+    background: url('https://www.transparenttextures.com/patterns/circuit-board.png') repeat, #1f1f1f;
     color: #ddd;
 }
 
@@ -132,11 +169,11 @@ section h2 {
     background: #0f172a;
 }
 
-.dark-mode section h2 {
-    color: #ddd;
+.dark-mode section {
+    background: rgba(31, 31, 31, 0.9);
 }
 
-.dark-mode #experience h3, .dark-mode #projects h3 {
+.dark-mode section h2, .dark-mode .job h3, .dark-mode .project h3 {
     color: #ddd;
 }
 
@@ -146,4 +183,90 @@ section h2 {
 
 .dark-mode nav a:hover {
     color: #00aaff;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #00aaff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 10;
+}
+
+#back-to-top:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+.dark-mode #back-to-top {
+    background: #00aaff;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: static; /* Adjusted for flex layout */
+    }
+
+    header {
+        flex-wrap: wrap;
+        padding: 0.5rem;
+    }
+
+    .header-content {
+        flex: 1;
+        padding: 0.5rem;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        background: #1a2a44;
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+
+    .profile-photo {
+        width: 60px; /* Smaller for mobile */
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+        padding-top: 3rem; /* Adjusted for smaller header */
+    }
+
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
 }

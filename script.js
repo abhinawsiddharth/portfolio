@@ -1,4 +1,4 @@
-// Smooth scrolling for nav links with header offset
+// Smooth scrolling with header offset
 document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -11,15 +11,18 @@ document.querySelectorAll('nav a').forEach(anchor => {
             top: sectionPosition,
             behavior: 'smooth'
         });
+        if (window.innerWidth <= 768) {
+            document.getElementById('nav-menu').classList.remove('active');
+        }
     });
 });
 
-// Dark mode toggle (unchanged)
+// Dark mode toggle
 const toggleButton = document.createElement('button');
 toggleButton.textContent = 'Toggle Dark Mode';
 toggleButton.style.position = 'fixed';
 toggleButton.style.top = '20px';
-toggleButton.style.right = '20px';
+toggleButton.style.right = '80px';
 toggleButton.style.padding = '10px';
 toggleButton.style.background = '#00aaff';
 toggleButton.style.color = 'white';
@@ -30,4 +33,29 @@ document.body.appendChild(toggleButton);
 
 toggleButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
+});
+
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Back to Top Button
+const backToTopButton = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
